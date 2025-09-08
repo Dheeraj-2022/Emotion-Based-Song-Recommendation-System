@@ -1,0 +1,22 @@
+<div class="recommendations-container">
+  <mat-toolbar color="primary">
+    🎵 Song Recommendations
+  </mat-toolbar>
+
+  <div class="content">
+    <h2>Songs for Emotion: <span>{{ emotion | titlecase }}</span></h2>
+
+    <div class="songs-grid">
+      <mat-card *ngFor="let song of songs" class="song-card">
+        <img mat-card-image [src]="song.image" alt="{{ song.title }}" />
+        <mat-card-content>
+          <h3>{{ song.title }}</h3>
+          <p>{{ song.artist }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="accent">Play</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.recommendations-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+
+  mat-toolbar {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .content {
+    padding: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .songs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+
+      .song-card {
+        background: #fff;
+        color: #000;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        text-align: center;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        img {
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+          height: 150px;
+          object-fit: cover;
+        }
+
+        mat-card-content {
+          h3 {
+            margin: 10px 0 5px 0;
+          }
+          p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+          }
+        }
+
+        mat-card-actions {
+          margin-bottom: 10px;
+
+          button {
+            width: 80%;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

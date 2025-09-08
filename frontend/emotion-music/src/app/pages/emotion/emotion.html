@@ -1,0 +1,22 @@
+<div class="emotion-container">
+  <mat-toolbar color="primary" class="toolbar">
+    🎵 Emotion Music - Detect Emotion
+  </mat-toolbar>
+
+  <div class="video-card">
+    <mat-card>
+      <mat-card-title>Live Camera</mat-card-title>
+
+      <div class="video-wrapper">
+        <video autoplay muted></video>
+        <span class="emotion-badge">{{ emotion | titlecase }}</span>
+      </div>
+
+      <mat-card-content>
+        <button mat-raised-button color="accent" class="detect-btn" (click)="goToSongs()">
+          🎧 Get Recommended Songs
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

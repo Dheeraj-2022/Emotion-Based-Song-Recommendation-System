@@ -1,50 +1,62 @@
 <div class="login-container">
-  <mat-card class="login-card">
-    <mat-card-header>
-      <mat-card-title>🎵 Emotion Music</mat-card-title>
-      <mat-card-subtitle>Login to Continue</mat-card-subtitle>
-    </mat-card-header>
+  <div class="card shadow-lg login-card mx-auto" style="max-width: 480px; border-radius: 1rem; background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+<div class="card-header text-center text-danger bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem 1rem 0 0;">
+      <h3 class="mb-0"><i class="bi bi-music-note-beamed"></i> Emotion Music</h3>
+    </div>
 
-    <mat-card-content>
+    <div class="card-body p-4">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="email" placeholder="Enter your email" />
-          <mat-icon matSuffix>email</mat-icon>
-          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        <div class="mb-3">
+          <label for="email" >Email</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text bg-white"><i class="bi bi-envelope-fill"></i></span>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              class="form-control"
+              placeholder="Enter your email"
+              [class.is-invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+            />
+          </div>
+          <div *ngIf="loginForm.get('email')?.hasError('required')" class="invalid-feedback d-block">
             Email is required
-          </mat-error>
-          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+          </div>
+          <div *ngIf="loginForm.get('email')?.hasError('email')" class="invalid-feedback d-block">
             Enter a valid email
-          </mat-error>
-        </mat-form-field>
+          </div>
+        </div>
 
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" placeholder="Enter your password" />
-          <mat-icon matSuffix>lock</mat-icon>
-          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        <div class="mb-3">
+          <label for="password" class="form-label text-danger">Password</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text bg-white"><i class="bi bi-lock-fill"></i></span>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="form-control"
+              placeholder="Enter your password"
+              [class.is-invalid]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+            />
+          </div>
+          <div *ngIf="loginForm.get('password')?.hasError('required')" class="invalid-feedback d-block">
             Password is required
-          </mat-error>
-          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+          </div>
+          <div *ngIf="loginForm.get('password')?.hasError('minlength')" class="invalid-feedback d-block">
             Password must be at least 4 characters
-          </mat-error>
-        </mat-form-field>
+          </div>
+        </div>
 
-        <button
-          mat-raised-button
-          color="primary"
-          class="login-btn full-width"
-          type="submit"
-        >
+        <button type="submit" class="btn btn-primary w-100 login-btn shadow-sm">
           Login
         </button>
       </form>
-    </mat-card-content>
+    </div>
 
-    <mat-card-actions>
-      <button mat-button color="accent">Forgot Password?</button>
-      <button mat-button color="warn">Create Account</button>
-    </mat-card-actions>
-  </mat-card>
+    <div class="card-footer text-center bg-transparent border-0">
+      <button class="btn btn-link text-danger">Forgot Password?</button>
+      <button class="btn btn-link text-danger">Create Account</button>
+    </div>
+  </div>
 </div>

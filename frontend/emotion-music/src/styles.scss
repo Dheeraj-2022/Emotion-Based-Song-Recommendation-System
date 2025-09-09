@@ -1,10 +1,14 @@
 
+@use '@angular/material' as mat;
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
 
 html {
   @include mat.theme((
@@ -32,6 +36,14 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
+
+  // Add background image
+  background-image: url('https://www.shutterstock.com/image-photo/beautiful-young-girl-blonde-hair-260nw-2428173213.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 /* You can add global styles to this file, and also import other style files */
 

@@ -1,0 +1,6 @@
+- [x] Update src/styles.scss to set background-image to https://www.shutterstock.com/image-photo/beautiful-young-girl-blonde-hair-260nw-2428173213.jpg on body
+- [x] Remove background-image from src/app/pages/emotion/emotion.scss
+- [x] Remove background-image from src/app/pages/register/register.scss
+- [x] Remove background-image from src/app/pages/recommendations/recommendations.scss
+- [x] Test the application to verify permanent background
+- [x] Add background-image to register page for visibility

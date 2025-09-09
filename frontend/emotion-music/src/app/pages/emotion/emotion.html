@@ -1,22 +1,32 @@
 <div class="emotion-container">
-  <mat-toolbar color="primary" class="toolbar">
-    🎵 Emotion Music - Detect Emotion
-  </mat-toolbar>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-4 fw-bold" href="#" >
+        <i class="bi bi-music-note-beamed"></i> Emotion Music - Detect Emotion
+      </a>
+    </div>
+  </nav>
 
-  <div class="video-card">
-    <mat-card>
-      <mat-card-title>Live Camera</mat-card-title>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg emotion-card" style="border-radius: 1rem; background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <div class="card-header text-center text-danger bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem 1rem 0 0;">
+            <h4 class="mb-0" class="form-label text-danger"><i class="bi bi-camera-video-fill"></i> Live Camera</h4>
+          </div>
 
-      <div class="video-wrapper">
-        <video autoplay muted></video>
-        <span class="emotion-badge">{{ emotion | titlecase }}</span>
+          <div class="card-body p-4 text-center">
+            <div class="video-wrapper position-relative d-inline-block">
+              <video autoplay muted class="rounded shadow" style="width: 100%; max-width: 450px; height: 340px; border: 3px solid #667eea;"></video>
+              <span class="badge bg-primary position-absolute bottom-0 end-0 m-3 fs-6 fw-bold emotion-badge">{{ emotion | titlecase }}</span>
+            </div>
+
+            <button class="btn btn-primary mt-4 px-4 py-2 detect-btn shadow-sm" (click)="goToSongs()">
+              <i class="bi bi-headphones"></i> Get Recommended Songs
+            </button>
+          </div>
+        </div>
       </div>
-
-      <mat-card-content>
-        <button mat-raised-button color="accent" class="detect-btn" (click)="goToSongs()">
-          🎧 Get Recommended Songs
-        </button>
-      </mat-card-content>
-    </mat-card>
+    </div>
   </div>
 </div>

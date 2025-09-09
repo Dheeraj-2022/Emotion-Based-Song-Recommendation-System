@@ -1,72 +1,107 @@
 .recommendations-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
+background: linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(118, 75, 162, 0.5) 100%), url('https://www.shutterstock.com/image-photo/beautiful-young-girl-blonde-hair-260nw-2428173213.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
+}
 
-  mat-toolbar {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
+.recommendations-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
 
-  .content {
-    padding: 30px;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
+.navbar {
+  position: relative;
+  z-index: 2;
+}
 
-    h2 {
-      margin-bottom: 30px;
-      font-size: 28px;
-    }
+.container {
+  position: relative;
+  z-index: 2;
+}
 
-    .songs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+.song-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
 
-      .song-card {
-        background: #fff;
-        color: #000;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        text-align: center;
-        transition: transform 0.3s;
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-        &:hover {
-          transform: translateY(-5px);
-        }
+.song-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
 
-        img {
-          border-top-left-radius: 16px;
-          border-top-right-radius: 16px;
-          height: 150px;
-          object-fit: cover;
-        }
+.card-img-top {
+  transition: transform 0.3s ease;
+}
 
-        mat-card-content {
-          h3 {
-            margin: 10px 0 5px 0;
-          }
-          p {
-            margin: 0;
-            font-size: 14px;
-            color: #555;
-          }
-        }
+.song-card:hover .card-img-top {
+  transform: scale(1.05);
+}
 
-        mat-card-actions {
-          margin-bottom: 10px;
+.play-btn {
+  background: linear-gradient(135deg, #090979 0%, #00d4ff 100%);
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
 
-          button {
-            width: 80%;
-            border-radius: 20px;
-          }
-        }
-      }
-    }
-  }
+.play-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.play-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.play-btn:hover {
+  background: linear-gradient(135deg, #090979 0%, #00d4ff 100%);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  animation: slideIn 1s ease-in-out;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.card-title, .card-text {
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
